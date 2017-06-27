@@ -3,33 +3,7 @@
 
 </head>
 <body>
- <p>Time LeftToday: <span id="countdownTimer">00:00. <small>00</small></span></p>
+<iframe width="636" height="327" src="https://w2.countingdownto.com/1862064" frameborder="0"></iframe>
 </body>
-  <script language='javascript'>
-if (document.getElementById('countdownTimer')) {
-  pad = function(n, len) { // leading 0's
-    var s = n.toString();
-    return (new Array( (len - s.length + 1) ).join('0')) + s;
-  };
-
-  var timerRunning = setInterval(
-    function countDown() {
-      var now = new Date();
-      if ( (now.getDay() >= 1) && (now.getDay() <= 5) ) { // Monday to Friday only
-        var target = 15; // 15:00hrs is the cut-off point
-        if (now.getHours() < target) { // don't do anything if we're past the cut-off point
-          var hrs = (target - 1) - now.getHours();
-          if (hrs < 0) hrs = 0;
-          var mins = 59 - now.getMinutes();
-          if (mins < 0) mins = 0;
-          var secs = 59 - now.getSeconds();
-          if (secs < 0) secs = 0;
-          var str = pad(hrs, 2) + ':' + pad(mins, 2) + '.<small>' + pad(secs, 2) + '</small>';
-          document.getElementById('countdownTimer').innerHTML = str;
-        }
-      }
-    }, 1000
-  );
-}
-</script>
+ 
 </html>
